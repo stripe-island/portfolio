@@ -2,27 +2,35 @@
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>しまフォリオ</title>
+    <style>
+
+        html {
+            scroll-padding-top: 120px;
+        }
+
+    </style>
 </head>
 <body>
     <header class="sticky-top bg-dark">
         <nav class="container navbar navbar-dark">
             <div>
-                <h1 class="mb-0"><a class="navbar-brand" href="#">しまフォリオ</a></h1>
+                <h1 class="mb-0"><a class="navbar-brand" href="index.html">しまフォリオ</a></h1>
                 <p class="text-muted">しましまer's ポートフォリオサイト</p>
             </div>
             <ul class="nav">
-                <li><a class="nav-link" href="#">Works</a></li>
-                <li><a class="nav-link d-none d-sm-block" href="#">And more</a></li>
-                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#Works">Works</a></li>
+                <li><a class="nav-link d-none d-sm-block" href="#AndMore">And more</a></li>
+                <li><a class="nav-link" href="#About">About</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
-        <section class="mt-5">
+        <section id="Works" class="mt-5">
             <h2 class="h1 text-center mb-4">Works</h2>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
@@ -31,6 +39,16 @@
                         <img class="card-img-top" src="img/thumbnail_debate-score.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">ディベート大会結果管理システム</h3>
+                            <p class="card-text">ボランティアでスタッフをしているディベート大会の試合結果を記録して集計するシステム</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">PHP</span>
+                            <span class="badge bg-secondary">REST API</span>
+                            <span class="badge bg-secondary">MySQL</span>
+                            <span class="badge bg-secondary">JavaScript</span>
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
+                            <span class="badge bg-secondary">SPA</span>
                         </div>
                     </div>
                 </div>
@@ -40,6 +58,14 @@
                         <img class="card-img-top" src="img/thumbnail_doljara.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">ドルジャラ</h3>
+                            <p class="card-text">アイドルをスカウトしてユニットを組んでデビューさせるカンタン麻雀ゲーム</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">C#</span>
+                            <span class="badge bg-secondary">.NET Framework</span>
+                            <span class="badge bg-secondary">Go</span>
+                            <span class="badge bg-secondary">WebSocket</span>
+                            <span class="badge bg-secondary">Redis</span>
                         </div>
                     </div>
                 </div>
@@ -49,6 +75,15 @@
                         <img class="card-img-top" src="img/thumbnail_shift-mgr.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">シフトマネージャ</h3>
+                            <p class="card-text">バイトしてたときにシフト表をWebで見れたらいいなと思ってつくったシステム</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">Perl</span>
+                            <span class="badge bg-secondary">REST API</span>
+                            <span class="badge bg-secondary">MySQL</span>
+                            <span class="badge bg-secondary">JavaScript</span>
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
                         </div>
                     </div>
                 </div>
@@ -58,6 +93,13 @@
                         <img class="card-img-top" src="img/thumbnail_flags-quiz.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">国際信号旗を覚える</h3>
+                            <p class="card-text">船舶の国際信号旗を効率よく楽しく暗記するために作ったクイズサイト</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">JavaScript</span>
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
+                            <span class="badge bg-secondary">SVG</span>
                         </div>
                     </div>
                 </div>
@@ -67,13 +109,19 @@
                         <img class="card-img-top" src="img/thumbnail_law-quiz.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">海上衝突予防法を覚える</h3>
+                            <p class="card-text">船舶の法律を少しでも楽しく暗記できるように作ったクイズサイト</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">JavaScript</span>
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mt-5">
+        <section id="AndMore" class="mt-5">
             <h2 class="h1 text-center mb-4">And more...</h2>
 
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
@@ -82,6 +130,13 @@
                         <img class="card-img-top" src="img/thumbnail_chocolate.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">えぶりでいちょこれいと</h3>
+                            <p class="card-text">チョコレートを食べたことを記録したり、ツイートしたりできるWebアプリ</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">Python</span>
+                            <span class="badge bg-secondary">CGI</span>
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
                         </div>
                     </div>
                 </div>
@@ -91,6 +146,11 @@
                         <img class="card-img-top" src="img/thumbnail_wakatsuku-blog.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">わかつく！</h3>
+                            <p class="card-text">アプリ開発がしたいプログラミング初心者向けに書こうと思ったブログ</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">HTML</span>
+                            <span class="badge bg-secondary">CSS</span>
                         </div>
                     </div>
                 </div>
@@ -100,16 +160,39 @@
                         <img class="card-img-top" src="img/thumbnail_android-apps.png" alt="">
                         <div class="card-body">
                             <h3 class="card-title h5">Androidアプリ</h3>
+                            <p class="card-text">学生時代にクラスのグループウェアや人狼ゲームのゲームマスターアプリなどを開発</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-secondary">Java</span>
+                            <span class="badge bg-secondary">Eclipse</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mt-5">
+        <section id="About" class="mt-5">
             <h2 class="h1 text-center mb-4">About</h2>
+
+            <div class="row row-cols-1 row-cols-md-2 justify-content-center align-items-center">
+                <div class="col-7 col-md-4">
+                    <img class="img-fluid rounded-circle" src="img/profile.jpg" alt="">
+                </div>
+                <div class="col">
+                    <h3 class="h4 text-center mt-4">しましまer</h3>
+                    <p class="px-5">そうだ、しましまの服を着よう</p>
+                    <div class="text-center">
+                        <i class="bi-github fs-5 text-secondary"></i>
+                        <a class="link-secondary align-text-bottom" href="https://github.com/stripe-island">https://github.com/stripe-island</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer class="mt-5 pt-3 pb-5 bg-light">
+        <p class="text-center text-muted">&copy; 2022 しましまer</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
