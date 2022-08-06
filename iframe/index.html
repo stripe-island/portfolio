@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>で、結局どのプログラミング言語を勉強すればいいのか｜わかつく！</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico">
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+</head>
+<body>
+<header>
+    <h1><a href="index.html"><span class="prefix">わかる！つくれる！</span><span class="web">Web</span>アプリ</a></h1>
+    <h2>
+        勉強の仕方がわからない、理解できないの<br>
+        連続のプログラミング初心者が<br>
+        次々とアプリを作れるようになるまでの最短コース
+    </h2>
+</header>
+<article>
+    <h2>で、結局どのプログラミング言語を勉強すればいいのか</h2>
+    <time>2017-11-25</time>
+    <p>プログラミングの勉強を始めるとき、まずはどの言語を勉強するかを決めると思います。</p>
+    <p>初心者におすすめの言語を調べると、Java、Python、C#などの言語が書かれたページが出てきます。</p>
+    <figure>
+        <img src="images/introduction01_1.jpg">
+        <figcaption>photo by <a href="https://www.flickr.com/photos/osde-info/4416537759" target="_blank">osde8info - java books in waterstones</a></figcaption>
+    </figure>
+    <p>それぞれの言語の特徴やメリットなどとともに、プログラミング言語の名前がたくさん並んだWebページ。</p>
+    <p>あなたはそれを読み終えて、こう思いませんでしたか？</p>
+    <p><strong>「で、結局どの言語が良いの？」</strong></p>
+    <p>このページでは、これからプログラミングを始める方が学ぶべき言語を、筆者の経験をもとに1つに厳選してお教えします。</p>
+    <h3>運命の選択ではない</h3>
+    <p>プログラミング言語の違いというと、あなたはものすごく大きな違いを想像しているかもしれません。</p>
+    <p>言語と言えば、日本語の”こんにちは”は、英語では”Hello”、中国語では”<ruby>你<rt>ニー</rt>好<rt>ハオ</rt></ruby>”ですね。</p>
+    <p>使われている文字も発音も違うので、英語も中国語も両方使えるようになるのは難しそうです。</p>
+    <figure>
+        <img src="images/introduction01_2.jpg">
+    </figure>
+    <p>では、プログラミングはどうかというと、<strong>言語によって書き方が大きく異なるということはありません。</strong></p>
+    <p>言語ごとのプログラムの書き方の違いは、日本の方言ぐらいの違いだと思ってもらえると良いと思います。</p>
+    <p>ある地方では「ええ天気やで」と言うけど、ある地方では「よか天気ばい」と言う。その程度の違いです。</p>
+    <p>実際に、異なる2つの言語で書かれたプログラムを見比べてみましょう。</p>
+    <p>同じことをするプログラムを、Javaという言語と、Visual Basicという言語で書くとこうなります。</p>
+<pre class="prettyprint linenums"><code>int weather;
+String result;
+
+weather = getWeather();
+if (weather == Weathers.SUNNY) {
+    result = "良い";
+}
+else {
+    result = "良くない";
+}
+
+System.out.println("今日は天気が" + result + "です。");
+</code></pre>
+<pre class="prettyprint linenums"><code>Dim weather As Integer
+Dim result As String
+
+weather = GetWeather()
+If weather = Weathers.Sunny Then
+    result = "良い"
+Else
+    result = "良くない"
+End If
+
+Console.WriteLine("今日は天気が" & result & "です。")
+</code></pre>
+    <p>書いてあることの意味はわからなくても、書き方が少し違うだけというのはわかっていただけたかと思います。</p>
+    <p>つまり、<strong>1つの言語を習得した後に、もう1つ言語を覚えるのは難しくない</strong>ということです。</p>
+    <p>プログラミング言語の選択は確かに重要なことかもしれませんが、迷いすぎる必要はありません。</p>
+    <h3>筆者はJavaを選択、しかし</h3>
+    <p>筆者が最初に勉強することに決めたプログラミング言語はJavaです。</p>
+    <p>理由は単純で、筆者は当時スマートフォンのアプリを作りたいと思っていたからです。</p>
+    <p>Javaは、Androidのアプリケーション開発に利用されています。</p>
+    <figure>
+        <img src="images/introduction01_3.jpg">
+        <figcaption>photo by <a href="https://www.flickr.com/photos/edowoo/15254388414" target="_blank">Eduardo Woo - Android update</a></figcaption>
+    </figure>
+    <p>さて、Javaの勉強を進めて、自分のアプリを開発することはできましたが、2つの問題に直面しました。</p>
+    <p>1つは、<strong>iPhoneを使っている友人に、自分が作ったアプリを使ってもらうことができなかった</strong>ことです。</p>
+    <p>Javaで作ることができるのはAndroidアプリです。当然ですが、iPhoneで使うことはできません。</p>
+    <p>せっかく作ったアプリでしたが、Androidを使っていた少人数の方にしか入れてもらえませんでした。</p>
+    <p>そして、もう1つの問題はというと、<strong>インターネットに接続して何かをする機能を作れなかった</strong>ことです。</p>
+    <p>作れなかった機能はどんなものかというと、例えばゲームの得点ランキングを表示する機能です。</p>
+    <figure>
+        <img src="images/introduction01_4.jpg">
+    </figure>
+    <p>サーバーという言葉はどこかで聞いたことがあると思います。</p>
+    <p>ランキングを表示するためには、サーバーにゲームの得点の情報を送る必要があります。</p>
+    <p>この時、サーバーでもプログラムを動かすのですが、サーバーでJavaのプログラムを動作させるのは簡単なことではなかったのです。</p>
+    <p>Javaしか勉強していない段階だったので、インターネットに接続する機能は諦めていました。</p>
+    <h3>後悔しない言語は</h3>
+</article>
+<footer>&copy; 2018 Make.</footer>
+</body>
+</html>
