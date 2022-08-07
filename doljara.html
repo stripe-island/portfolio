@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドルジャラ｜しまフォリオ</title>
+</head>
+<body>
+    <header class="sticky-top bg-dark">
+        <nav class="container navbar navbar-dark row-cols-1 row-cols-md-2">
+            <div class="col col-lg-7">
+                <h1 class="mb-0"><a class="navbar-brand" href="index.html">しまフォリオ</a></h1>
+                <p class="text-muted">しましまer's ポートフォリオサイト</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="mt-5">
+            <h2 class="h1 text-center mb-4">
+                <i class="bi-controller"></i>
+                ドルジャラ
+            </h2>
+
+            <div class="row justify-content-center mb-4">
+                <img class="col-md-7" src="img/screenshot_doljara.jpg" alt="">
+            </div>
+
+            <h3 class="h4 pb-1 border-bottom">
+                <i class="bi-info-circle fs-6"></i>
+                <span class="align-middle">Description</span>
+            </h3>
+            <p>
+                アイドルをスカウトしてユニットを組んでデビューさせるカンタン麻雀ゲーム<br>
+                イラストは友人が描いてくれたものを使用しています。
+            </p>
+
+            <h3 class="h4 pb-1 border-bottom">
+                <i class="bi-download fs-6"></i>
+                <span class="align-middle">Download</span>
+            </h3>
+            <p>
+                下記から「Doljara.zip」を選択してダウンロードしてください。
+            </p>
+            <p class="ms-2">
+                <i class="bi-filetype-exe fs-5"></i>
+                <a class="align-text-bottom" href="https://1drv.ms/u/s!Au26w2ODN0PabXbCdf6MiwQoEec?e=TeTgIG" target="_blank">公開 - OneDrive</a>
+            </p>
+
+            <h3 class="h4 pb-1 border-bottom">
+                <i class="bi-code-slash fs-6"></i>
+                <span class="align-middle">Specifications</span>
+            </h3>
+            <p>
+                親しい友人同士で通話しながらプレイすることを想定した仕様になっており、手番の表示や自動で上がりを判定する処理等は実装していない。<br>
+                盤面全体の情報を持ったJSONをやり取りすることにより、オンライン対戦を実現している。
+            </p>
+
+            <div class="row justify-content-center my-4">
+                <img class="col-md-7" src="img/doljara_diagram.png" alt="">
+            </div>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    データベース
+                    <span class="badge bg-secondary fs-6 align-text-bottom">Redis</span>
+                </h4>
+                <p>
+                    GCPにデータベースの無料枠が無かったため、無料で利用できる<a href="https://upstash.com/" target="_blank">Upstash</a>のRedisを使用<br>
+                    インターネットを介してアクセスしているため、インメモリデータベースの速度面でのメリットはあまり享受できていないと思われる。
+                </p>
+            </div>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    サーバ
+                    <span class="badge bg-secondary fs-6 align-text-bottom">Go</span>
+                </h4>
+                <p>
+                    Google Cloud Functionsで利用できる言語で、後述するWebSocketサーバの実装にも利用した場合にパフォーマンスが出そうなGoを選定<br>
+                    クライアントから直接Redisを操作する実装にしてもよいように思われるが、今後データの保存方法が変わる可能性もあるためサーバを経由する実装とした。<br>
+                    RedisのWATCHコマンドおよびデータのバージョン番号を利用して、楽観的排他制御を行っている。
+                </p>
+                <p class="ms-2">
+                    <i class="bi-github fs-5"></i>
+                    <a class="align-text-bottom" href="https://github.com/stripe-island/dol-jara-server/blob/main/function.go" target="_blank">ソースコードを表示</a>
+                </p>
+            </div>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    WebSocketサーバ
+                    <span class="badge bg-secondary fs-6 align-text-bottom">Go</span>
+                </h4>
+                <p>
+                    プロキシサーバを利用している環境からのアクセスなど、なんらかの原因でWebSocketサーバに接続できない場合を想定して、データ自体のやり取りは行わず、盤面の更新があったことのみをリアルタイムでクライアントに通知する実装としている。
+                </p>
+                <p class="ms-2">
+                    <i class="bi-github fs-5"></i>
+                    <a class="align-text-bottom" href="https://github.com/stripe-island/dol-jara-server/blob/main/websocket.go" target="_blank">ソースコードを表示</a>
+                </p>
+            </div>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    クライアント
+                    <span class="badge bg-secondary fs-6 align-text-bottom">C#</span>
+                    <span class="badge bg-secondary fs-6 align-text-bottom">.NET Framework</span>
+                </h4>
+                <p>
+                    C#.NETを利用したWindowsのデスクトップアプリケーション<br>
+                    WebSocketサーバに接続できなかった場合でも、タイマーによるポーリングで定期的に画面を更新する実装となっている。
+                </p>
+                <p class="ms-2">
+                    <i class="bi-github fs-5"></i>
+                    <a class="align-text-bottom" href="https://github.com/stripe-island/dol-jara" target="_blank">ソースコードを表示</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="mt-5 text-center"><a class="text-decoration-none" href="index.html#Doljara">
+            <i class="bi-backspace"></i>
+            前のページに戻る
+        </a></div>
+    </main>
+
+    <footer class="mt-5 pt-3 pb-5 bg-light">
+        <p class="text-center text-muted">&copy; 2022 しましまer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
