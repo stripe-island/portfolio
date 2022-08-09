@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シフトマネージャ｜しまフォリオ</title>
+</head>
+<body>
+    <header class="sticky-top bg-dark">
+        <nav class="container navbar navbar-dark row-cols-1 row-cols-md-2">
+            <div class="col col-lg-7">
+                <h1 class="mb-0"><a class="navbar-brand" href="index.html">しまフォリオ</a></h1>
+                <p class="text-muted">しましまer's ポートフォリオサイト</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="mt-5">
+            <h2 class="h1 text-center mb-4">
+                <i class="bi-calendar-week"></i>
+                シフトマネージャ
+            </h2>
+
+            <h3 class="h4 pb-1 border-bottom">
+                <i class="bi-info-circle fs-6"></i>
+                <span class="align-middle">Description</span>
+            </h3>
+            <p>
+                アルバイトをしていたときに紙で掲示されていたシフト表を、どこにいてもスマートフォンから確認できるようにすることを目的に開発したシステム<br>
+                わずかな期間ではあるが、従業員の方々にシフトの確認に使ってもらえていたはず
+            </p>
+
+            <h3 class="h4 pb-1 border-bottom">
+                <i class="bi-file-play fs-6"></i>
+                <span class="align-middle">Demo</span>
+            </h3>
+            <p>シフト表ページ（トップページ）</p>
+            <p class="ms-2">
+                <i class="bi-filetype-exe fs-5"></i>
+                <a class="align-text-bottom" href="http://stripeisland.starfree.jp/demo/shift-mgr/index.html" target="_blank">index.html</a>
+            </p>
+            <p>個人シフト一覧表示ページ</p>
+            <p class="ms-2">
+                <i class="bi-filetype-exe fs-5"></i>
+                <a class="align-text-bottom" href="http://stripeisland.starfree.jp/demo/shift-mgr/myshift.html" target="_blank">myshift.html</a>
+            </p>
+            <p>従業員登録ページ</p>
+            <p class="ms-2">
+                <i class="bi-filetype-exe fs-5"></i>
+                <a class="align-text-bottom" href="http://stripeisland.starfree.jp/demo/shift-mgr/employees/register.html" target="_blank">employees/register.html</a>
+            </p>
+
+            <h3 class="h4 pb-1 border-bottom">
+                <i class="bi-code-slash fs-6"></i>
+                <span class="align-middle">Specifications</span>
+            </h3>
+            <p>
+                最終的にはシステム上でいいかんじにシフトを組んでくれるところまで実装していく構想があった<br>
+                実際には紙で掲示されたシフト表のデータを自分が直接データベースに登録する形で運用
+            </p>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    フロントエンド
+                    <span class="badge bg-secondary fs-6 align-text-bottom">JavaScript</span>
+                    <span class="badge bg-secondary fs-6 align-text-bottom">HTML</span>
+                    <span class="badge bg-secondary fs-6 align-text-bottom">CSS</span>
+                </h4>
+                <p>
+                    JavaScriptのXMLHttpRequestを用いてAPIからJSONデータを取得して画面を表示
+                </p>
+                <p class="ms-2">
+                    <i class="bi-github fs-5"></i>
+                    <a class="align-text-bottom" href="https://github.com/stripe-island/shift-mgr/tree/main/html" target="_blank">ソースコードを表示</a>
+                </p>
+            </div>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    REST API
+                    <span class="badge bg-secondary fs-6 align-text-bottom">Perl</span>
+                </h4>
+                <p>
+                    借りていたレンタルサーバで動かせる言語をいろいろ試していた時期のためPerlでの実装となっている<br>
+                    実装済みのエンドポイントの一覧は下記のとおり
+                </p>
+                <h5 class="h6">特定の日付のシフトデータを取得する</h5>
+                <p class="ms-2">
+                    GET /api/v1/shifts/{日付数字8ケタ}
+                </p>
+                <h5 class="h6">特定の従業員のシフトデータを取得する</h5>
+                <p class="ms-2">
+                    GET /api/v1/employees/{従業員番号}/shifts?since={日付数字8ケタ}&amp;until={日付数字8ケタ}
+                </p>
+                <h5 class="h6">従業員を登録する</h5>
+                <p class="ms-2">
+                    POST /api/v1/employees
+                </p>
+                <p class="ms-2">
+                    <i class="bi-github fs-5"></i>
+                    <a class="align-text-bottom" href="https://github.com/stripe-island/shift-mgr/tree/main/api/v1" target="_blank">ソースコードを表示</a>
+                </p>
+            </div>
+
+            <div class="mx-2 mb-4">
+                <h4>
+                    データベース
+                    <span class="badge bg-secondary fs-6 align-text-bottom">MySQL</span>
+                </h4>
+                <p>
+                    借りていたレンタルサーバで使えたMySQLを利用<br>
+                    シンプルなシステムのため、テーブルは'employees', 'shifts'の2つのみとなっている。
+                </p>
+                <p class="ms-2">
+                    <i class="bi-github fs-5"></i>
+                    <a class="align-text-bottom" href="https://github.com/stripe-island/shift-mgr/blob/main/database/CREATE_TABLE.SQL" target="_blank">ソースコードを表示</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="mt-5 text-center"><a class="text-decoration-none" href="index.html#ShiftMgr">
+            <i class="bi-backspace"></i>
+            前のページに戻る
+        </a></div>
+    </main>
+
+    <footer class="mt-5 pt-3 pb-5 bg-light">
+        <p class="text-center text-muted">&copy; 2022 しましまer</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
